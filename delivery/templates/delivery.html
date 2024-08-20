@@ -1,0 +1,68 @@
+{% extends 'base.html'%}
+{% block content %}
+
+<!-- <div class="columns">
+    <div class="column"
+        style="background-color: #0f98f8; border: 0px; border-radius: 2%;padding-left: 100px; padding-top: 60px;">
+        <input type="text" placeholder="Write your name:" style="margin-right: 100px; width: 400px;"
+            class="input"><br><br>
+        <input type="text" placeholder="Write your lastname" class="input" style="width: 400px;"><br><br>
+        <input type="text" name="" id="" class="input" placeholder="write your mobile number"
+            style="width: 400px;"><br><br>
+        <div class="select " width="400px">
+            <select placeholder="select region">
+                <option value="Argentina">Select region </option>
+                <option value="Bolivia">Bolivia</option>
+                <option value="Brazil">Brazil</option>
+                <option value="Chile">Chile</option>
+                <option value="Colombia">Colombia</option>
+                <option value="Ecuador">Ecuador</option>
+                <option value="Guyana">Guyana</option>
+                <option value="Paraguay">Paraguay</option>
+                <option value="Peru">Peru</option>
+                <option value="Suriname">Suriname</option>
+                <option value="Uruguay">Uruguay</option>
+                <option value="Venezuela">Venezuela</option>
+            </select>
+        </div><br><br>
+        <div class="select " width="400px">
+            <select placeholder="select region">
+                <option value="Argentina">Select region </option>
+                <option value="Bolivia">Bolivia</option>
+                <option value="Brazil">Brazil</option>
+                <option value="Chile">Chile</option>
+                <option value="Colombia">Colombia</option>
+                <option value="Ecuador">Ecuador</option>
+                <option value="Guyana">Guyana</option>
+                <option value="Paraguay">Paraguay</option>
+                <option value="Peru">Peru</option>
+                <option value="Suriname">Suriname</option>
+                <option value="Uruguay">Uruguay</option>
+                <option value="Venezuela">Venezuela</option>
+            </select>
+        </div><br><br>
+        <button class="button" type="submit">Send</button>
+    </div>
+    <div class="column"><iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1386.1110474877796!2d64.4531726474337!3d39.76605089430704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f5005d2cc77004d%3A0xa715c045b7222aa8!2s7-IDUM!5e0!3m2!1sru!2s!4v1677935926305!5m2!1sru!2s"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade" style="border: 0px;border-radius: 10px;"></iframe>
+    </div>
+</div> -->
+
+
+
+<form method="post" action="{% url 'delivery:delivery' %}">
+    {% csrf_token %}
+    <div class="columns">
+        <div class="column"
+            style="background-color: #0f98f8; border: 0px; border-radius: 2%;padding-left: 100px; padding-top: 60px;">
+            {{ form.name }}
+            {{ form.lastname }}
+            {{ form.mobile_number }}
+            {{ form.region1 }}
+            {{ form.region2 }}
+            <button class="button" type="submit">Send</button>
+        </div>
+
+{% endblock %}
